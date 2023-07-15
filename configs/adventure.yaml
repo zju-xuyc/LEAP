@@ -1,0 +1,32 @@
+video_name: adventure 
+full_name: Adventure_Rentals
+dataset_group: blazeit
+w: 1920
+h: 1080
+seed: 100
+start_frame: 7200   
+end_frame: 107990   
+fps: 30
+skip_frames: 120    
+max_gap_time: 5     
+min_gap_time: 2     
+
+traj_dist_min: 100  
+thresh_len: 45      
+max_len: 600        
+dis_thresh: 3200    
+difference_thresh: 0.0001 
+differ_abs_thresh: 64
+
+iou_thresh: 0.5               
+conf_thresh: 0.35             
+stop_iou_thresh: 0.7          
+intersect_overlap_thresh: 0.7 
+image_thresh_score: 0.995      
+
+ignore_region: [[1635, 575, 1755, 623],[135, 413, 163, 435],[135, 415, 1811, 440],[696, 399, 768, 452]]
+stop_area : [[80,380,220,560],[1700,430,1840,610]]
+
+car_count: 4
+truck_count: 2
+bus_count: 0

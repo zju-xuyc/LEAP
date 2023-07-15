@@ -1,0 +1,1 @@
+python3 tools/train_net.py --config-file configs/Taipei/bagtricks_R50-ibn.yml --num-gpus 1

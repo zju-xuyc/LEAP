@@ -1,0 +1,31 @@
+video_name: square 
+full_name: Square_Northeast
+dataset_group: blazeit
+w: 1920
+h: 1080
+seed: 100
+start_frame: 9000
+end_frame: 106590
+fps: 30
+skip_frames: 270
+max_gap_time: 10
+min_gap_time: 3
+
+traj_dist_min: 100 
+thresh_len: 45     
+max_len: 600       
+dis_thresh: 3200    
+difference_thresh: 0.0003 
+differ_abs_thresh: 64
+
+iou_thresh: 0.5
+conf_thresh: 0.25
+stop_iou_thresh: 0.7
+intersect_overlap_thresh: 0.5
+image_thresh_score: 0.95
+ignore_region: []
+stop_area : [[0,484,185,708],[586,206,791,337],[1791,353,1920,496],[1468,833,1920,1080]]
+
+car_count: 2
+truck_count: 1
+bus_count: 0
