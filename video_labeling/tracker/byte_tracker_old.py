@@ -177,8 +177,6 @@ class BYTETracker(object):
         remain_inds = scores > self.args.track_thresh
         inds_low = scores > 0.1
         inds_high = scores < self.args.track_thresh
-
-        # 根据两个阈值区分detection bbox为高置信度和低置信度
         inds_second = np.logical_and(inds_low, inds_high)
         
         dets = bboxes[remain_inds]

@@ -249,7 +249,7 @@ class ComputeOutbasedDstillLoss:
         self.DobjLoss = nn.MSELoss(reduction="none")
 
     def __call__(self, p, t_p, soft_loss='kl'):
-        # 判断batch是否为1？
+
         t_ft = torch.cuda.FloatTensor if t_p[0].is_cuda else torch.Tensor
         t_lbox, t_lobj = t_ft([0]), t_ft([0])
         t_lcls, t_lsoft = t_ft([0]), t_ft([0])
@@ -393,7 +393,7 @@ class ComputeDstillLoss:
                 r = t[:, :, 4:6] / anchors[:, None]  # wh ratio (3, 16, 2)
                 j = torch.max(
                     r, 1. / r).max(2)[0] < self.hyp['anchor_t']  # compare (3, 16)
-                t = t[j]  # 表示这一层匹配到的anchor
+                t = t[j]
 
                 # Offsets
                 gxy = t[:, 2:4]  # grid xy

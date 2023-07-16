@@ -7,10 +7,7 @@ import cv2
 import time
 
 def get_point_update(detect,tracks,cfg):
-    
-    """
-    针对最新的算法更新
-    """ 
+
     dis_thresh = cfg["dis_thresh"]
     match_dict = {}
     allocate_id = video_details.allocate_id
@@ -58,7 +55,6 @@ def match_cars_main_updated(current_frame,curr_frame_img,records,\
 
     if cfg["video_name"] in ["m30","m30hd"]:
         records = sort_detections(records, direction, reverse)
-    # 判断之前是否已经有历史车辆
 
     stop_region = cfg["stop_area"]
 

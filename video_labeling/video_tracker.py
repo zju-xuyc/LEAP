@@ -183,7 +183,7 @@ def labeling_video(args):
     
     time_all = []
     
-    detector = Detector(cfg) # 载入目标检测器
+    detector = Detector(cfg)
     timer = Timer()
     
     videoCapture = cv2.VideoCapture(args.video_path)
@@ -214,7 +214,7 @@ def labeling_video(args):
             t1 = time.time()
             online_targets = tracker.update(dets, [1, 1], [1, 1])
             t2 = time.time()
-            # 记录跟踪时间
+            
             time_all.append([detector.detactor_time[-1], t2 - t1, frame_id])
 
             online_tlwhs = []

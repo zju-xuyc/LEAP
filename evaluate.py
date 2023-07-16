@@ -350,8 +350,8 @@ def evaluate_parsed_result(return_tuple,cfg,args,logger):
 
 
     else:
-        car_detected = len(return_tuple.keys()) # 高度冗余
-        car_labeled = len(hand_labeled.keys()) # 仅能提供区间信息的手工标签
+        car_detected = len(return_tuple.keys())
+        car_labeled = len(hand_labeled.keys())
         logger.info("MAE: %f" % MAE)
         logger.info("MAPE: %f" % MAPE)
         

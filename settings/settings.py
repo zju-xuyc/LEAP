@@ -1,4 +1,3 @@
-### 用于存放永久性设置以及实验过程数据
 
 video_path = "XXX"
 label_path = {"blazeit":"XXX","m30":"XXX"}

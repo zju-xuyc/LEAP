@@ -77,7 +77,7 @@ def draw_trajectory_from_track(tracks, cfg):
     for track in tracks[0]:
         for point in track:
             cv2.circle(tmp,(int(point[0]*0.5+point[2]*0.5),int(point[1]*0.5+point[3]*0.5)),2,(255,255,255),-1)
-    cv2.imwrite("/home/xyc/baseline_0418/fixed_files/tmp_file/\
+    cv2.imwrite("/XXX/tmp_file/\
                  %s_tmp_tracks.jpg"%(cfg["video_name"]),tmp)
     
     draw_from_labels(video_path,label_parsed,'XXX/\

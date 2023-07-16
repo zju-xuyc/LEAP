@@ -67,14 +67,14 @@ class cluster_traj(object):
 def track_cluster_from_labels(video_name,v_type="blazeit",cluster_min_num=16,cluster_tracks_num=96,k=2000,save_result=True):
     
     if v_type == "blazeit":
-        image_background = cv2.imread("/home/xyc/baseline_0418/masks/background/%s.jpg"%(video_name))
+        image_background = cv2.imread("./masks/background/%s.jpg"%(video_name))
         label_parsed, tuple_dict, label_tuple_origin = get_blazeit_labels(video_name)
         sorted_keys = sorted(tuple_dict, key=tuple_dict.get)[:k]
         result_by_key = {key: tuple_dict[key] for key in sorted_keys}
         tuple_dict = result_by_key
 
     else:
-        image_background = cv2.imread("/home/xyc/video_data/M30/%s_mask/image000001.jpg"%(video_name))
+        image_background = cv2.imread("XXX.jpg"%(video_name))
         label_parsed, tuple_dict = get_m30_labels(video_name,k)
 
     cluster = cluster_traj(video_name,image_background,tuple_dict,cluster_min_num,cluster_tracks_num)

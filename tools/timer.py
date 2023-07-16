@@ -1,5 +1,4 @@
 import time
-# 计时模块
 
 class Timer(object):
     """A simple timer."""

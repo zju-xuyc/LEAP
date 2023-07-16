@@ -121,7 +121,6 @@ def run_session(cfgs,args,logger):
                 cfgs["video_name"]+"_0_%d_tracks_clustered.npy"%(cfgs["start_frame"]))
             exit()
 
-    # 明确目标检测器
     if args.use_distill:
         logger.info("Distilled")
         detector = Detector(args.weight,640,args.device,cfgs['iou_thresh'],cfgs['conf_thresh'])

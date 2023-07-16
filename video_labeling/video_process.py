@@ -13,10 +13,8 @@ from video_labeling.utils import non_max_suppression, scale_coords, calculate_p_
 def get_ignore_infos(video_ignore_path, image_shape):
     pads = np.zeros(image_shape)
 
-    #打开xml文档
     dom = xml.dom.minidom.parse(video_ignore_path)
 
-    #得到文档元素对象
     root = dom.documentElement
     bbs = [[float(bb.getAttribute("left")), float(bb.getAttribute("top")), float(bb.getAttribute("width")), float(bb.getAttribute("height"))] for bb in root.getElementsByTagName("ignored_region")[0].getElementsByTagName("box")]
     

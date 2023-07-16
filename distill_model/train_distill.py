@@ -90,13 +90,13 @@ def train(hyp, opt, device, tb_writer=None):
 
     # Model
     pretrained = weights.endswith('.pt')
-    # 事先与训练好的模型
+
     if pretrained:
         with torch_distributed_zero_first(rank):
             attempt_download(weights)  # download if not found locally
 
         ckpt = torch.load(weights, map_location=device)  # load checkpoint
-        # 加载学生模型
+
         model = Model(opt.cfg or ckpt['model'].yaml, ch=3, nc=nc, anchors=hyp.get(
             'anchors')).to(device)  # create
         exclude = ['anchor'] if (opt.cfg or hyp.get(
@@ -266,7 +266,7 @@ def train(hyp, opt, device, tb_writer=None):
     scheduler.last_epoch = start_epoch - 1  # do not move
     scaler = amp.GradScaler(enabled=cuda)
     compute_loss = ComputeLoss(model)  # init loss class
-    # 初始化蒸馏损失
+
     if opt.full_output_loss:
         compute_distill_loss = ComputeOutbasedDstillLoss(
             nc=nc, distill_ratio=opt.distill_ratio)
@@ -322,7 +322,7 @@ def train(hyp, opt, device, tb_writer=None):
                         imgs, opt.img_size)
                     t_targets = t_targets.to(device)
                     
-                # 计算教师和学生模型输出的误差
+
                 loss, loss_items = compute_distill_loss(pred, t_targets)
                 gt_loss, gt_loss_items = compute_loss(
                     pred, targets.to(device))
